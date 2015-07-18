@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    function test({a, b, c}) {
+        console.log(a);
+        console.log(b);
+        console.log(c);
+    };
+
+    var obj = {
+        a: 1,
+        b: 2,
+        c: 3,
+    };
+    test(obj);
+    var [a,b,c] = ['1','2',3];
+    function test () {
+        return {
+            foo: 1,
+            bar: 2
+        };
+    };
+
+    var {foo,bar} = test();
+    console.log (foo);
+</script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    "use strict";
+    /**
+     *
+     * @param ms
+     * @returns {Promise}
+     */
+    function timeout(ms) {
+
+        /**
+         * 其他处理代码
+         */
+        return new Promise(function (resolve) {
+                    setTimeout(resolve, ms, 'done');
+
+        });
+    }
+    function res() {
+        console.log('resolved~');
+    }
+    function reject() {
+        console.log('rejected~');
+    }
+    timeout(2000).then(res, reject).then(res, reject).then(reject, res);
+
+    function testRejected () {
+        var p = Promise.reject('rejected T-T');
+        p.then(function (s) {
+                    console.log("running");
+                }, //不会执行resovle方法
+                function (s) {
+                    console.log(s);
+                }
+        ).then(function (s) {
+                    console.log("running");
+                }, //不会执行resovle方法
+                function (s) {
+                    console.log(s);
+                });
+    }
+
+</script>
+</body>
+</html>

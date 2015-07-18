@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    /**
+     * ES6允许直接写入变量和函数
+     * @param x
+     * @param y
+     * @returns 对象，属性名位为x, y, 值为x, y 的值
+     */
+    function f (x, y) {
+        return {x, y};
+    }
+    var birth = '19';
+
+    var Person = {
+
+        name: '张三',
+
+        //等同于birth: birth
+        birth,
+
+        // 等同于hello: function ()...
+        hello() { console.log('我的名字是', this.name); } ,
+
+        ['he'+'ello']() {
+            return 'hi';
+        }
+    };
+
+
+
+
+</script>
+</body>
+</html>

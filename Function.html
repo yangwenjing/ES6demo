@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    /**
+     * 默认参数扩展
+     */
+
+    function parameter () {
+        function throwIfMissing() {
+            throw new Error('Missing parameter');
+        }
+
+        function foo(mustBeProvided = throwIfMissing()) {
+            return mustBeProvided;
+        }
+
+        foo();
+    }
+
+    /**
+     * 默认参数的做用域是函数作用域
+     */
+
+    function context() {
+        var x = 1;
+
+        function foo(x, y = x) {
+            console.log(y);
+        }
+
+        foo(2) // 2
+    }
+
+    /**
+     * rest参数
+     * rest后不能再接参数
+     */
+    function restParameter () {
+
+        function add(...values) {
+            let sum = 0;
+
+            for (var val of values) {
+                sum += val;
+            }
+
+            return sum;
+        }
+
+        console.log(add(2, 5, 3)); // 10
+    }
+</script>
+</body>
+</html>

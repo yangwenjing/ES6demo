@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    /**
+     * key-value
+     * 和对象的不同点，键可以为对象，不限于字符串和数字。
+     */
+    function MapTest() {
+        var m = new Map([['key1', 'v1'], ['key2', 'v2']]);
+        for(var item of m) {
+            console.log(item);
+        }
+    }
+
+    /**
+     * WeekMap 只接受object的键名
+     * 对对象的弱引用
+     * 方法：
+     *  has
+     *  get
+     *  set
+     *  delete
+     */
+
+    MapTest();
+</script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    /**
+     * 使用方法
+     * interface Iterable {
+        [System.iterator]() : Iterator,
+        }
+
+        interface Iterator {
+          next(value?: any) : IterationResult,
+        }
+
+         interface IterationResult {
+          value: any,
+          done: boolean,
+        }
+     * @returns {*}
+     */
+    function iIterator () {
+        var obj = {
+            data: [ 'hello', 'world' ],
+                [Symbol.iterator] () {
+            const self = this;
+            let index = 0;
+            return {
+                next() {
+                if (index < self.data.length) {
+                    return {
+                        value: self.data[index++],
+                        done: false
+                    };
+                } else {
+                    return { value: undefined, done: true };
+                }
+            }
+        };
+        }};
+
+
+        for(var i of obj) {
+            console.log(i);
+        }
+    }
+    iIterator ();
+
+
+</script>
+
+</body>
+</html>

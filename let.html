@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    "use strict"; //Chrome仅在严格模式下支持会计元素
+    /**
+     * let 不会变量提升
+     * let 实现了javascript中的块级元素
+     * 会形成一个假死区域
+     * 但是不会影响其他变量
+     */
+    b = 100;
+    {
+        a = 10; //不会报错
+        b = 10; //报错
+        typeof b; //SyError
+        let b;
+        var a;
+    }
+
+
+</script>
+
+</body>
+</html>

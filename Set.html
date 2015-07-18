@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    /**
+     * Set 类似于数组
+     * 但是不会添加重复值 (采用===方式)
+     * 需要用new 的方式
+     * 可以利用Set对数组去重
+     */
+    function setProperty () {
+        var arr = [1, 1, 1, 2, 2, 3, 4, 5];
+        var s = new Set();
+        arr.map(function (val) {
+            s.add(val);
+        });
+        for (var i of s)
+        {
+            console.log(i);
+        }
+        s.add({});
+        s.add({});
+        console.log(s.has({})); //每个object不同
+        /**
+         * Set 可以传入数组初始化
+         */
+        s = new Set([1,2,1,1,3,3,5,5]);
+        console.log(s.size);
+    }
+    /**
+     * Set 的方法
+     keys()：返回一个键名的遍历器
+     values()：返回一个键值的遍历器
+     entries()：返回一个键值对的遍历器
+     forEach()：使用回调函数遍历每个成员
+     */
+    function setMethod () {
+        var set = new Set(['red', 'blue', 'yellow']);
+        console.log("keys:");
+        for(var i of set.keys()) {
+            console.log(i);
+        }
+        console.log("values:");
+
+        for(i of set.values()) {
+            console.log(i);
+        }
+        console.log("entries:");
+
+        for(i of set.entries()) {
+            console.log(i);
+        }
+    }
+
+    /**
+     * weakSet
+     * 中元素只能是对象，
+     * 对象考虑引用的时候不考虑weakSet的引用，
+     * 无法遍历
+     */
+    function weakSetTest () {
+
+    }
+//    setProperty();
+    setMethod();
+
+</script>
+</body>
+</html>

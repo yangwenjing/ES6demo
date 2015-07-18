@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    var s = Symbol();
+    console.log(s);
+    document.writeln("ES6引入了一种新的原始数据类型Symbol，表示独一无二的ID。<br>");
+    document.writeln("Symbol('boo')===Symbol('boo')?<br>");
+    document.writeln(Symbol('boo')===Symbol('boo'));
+    document.writeln('<br>'+Symbol('boo').toString());
+    var obj = {};
+    obj[s] = 'num';
+    console.log(Object.getOwnPropertyNames(obj));
+    console.log(Object.getOwnPropertySymbols(obj));
+
+    var s2 = Symbol.for('boo');
+    var s3 = Symbol.for('boo');
+    s2 === s3;
+</script>
+
+</body>
+</html>
